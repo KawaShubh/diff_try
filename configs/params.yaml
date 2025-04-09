@@ -1,0 +1,25 @@
+data:
+  hr_dir: "/media/admin1/DL/CapsNetwork/Unsupervised/Diffusion/DiffBIR/inputs/HR"
+  lr_dir: "/media/admin1/DL/CapsNetwork/Unsupervised/Diffusion/DiffBIR/inputs/LR"
+  hr_size: 1120
+  lr_size: 280
+
+model:
+  latent_channels: 4
+  unet_channels: 64
+  use_pretrained_vae: true
+
+train:
+  batch_size: 1
+  lr: 1e-4
+  epochs: 100
+  save_interval: 5          # Save model every 5 epochs
+  # val_interval: 2           # Validate/save images every 2 epochs
+  loss_weights:
+    l1: 1.0                 # Weight for L1 loss
+    lpips: 0.8              # Weight for perceptual loss
+  device: "cuda"           # Specify GPU 1 (cuda:1)
+
+paths:
+  save_dir: "checkpoints"
+  # val_output_dir: "val_results"  # Where to save validation outputs

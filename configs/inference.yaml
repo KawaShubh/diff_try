@@ -1,0 +1,9 @@
+data:
+  lr_dir: "data/lr"
+  lr_size: 280
+
+model:
+  checkpoint: "path/to/your_trained_unet.pth"  # Your trained model
+  output_size: 1024                           # Target HR size
+
+device: "cuda" 
